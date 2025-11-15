@@ -1,0 +1,6 @@
+[submodule "playwright-poc-ui"]
+	path = playwright-poc-ui
+	url = git@github.com:JoniBach/playwright-poc-ui.git
+[submodule "playwright-poc-qa"]
+	path = playwright-poc-qa
+	url = git@github.com:JoniBach/playwright-poc-qa.git
