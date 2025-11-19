@@ -1,0 +1,28 @@
+{
+  "name": "playwright-poc",
+  "version": "1.0.0",
+  "description": "Playwright POC with UI and Journey Generator",
+  "private": true,
+  "workspaces": [
+    "playwright-poc-ui",
+    "playwright-poc-gen-ui"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=playwright-poc-ui",
+    "ui": "npm run dev --workspace=playwright-poc-ui",
+    "build": "npm run build --workspace=playwright-poc-ui",
+    "preview": "npm run preview --workspace=playwright-poc-ui",
+    "generate": "npm run generate:index --workspace=playwright-poc-gen-ui",
+    "validate": "npm run validate --workspace=playwright-poc-gen-ui",
+    "install:all": "npm install && npm install --workspace=playwright-poc-ui && npm install --workspace=playwright-poc-gen-ui"
+  },
+  "keywords": [
+    "playwright",
+    "svelte",
+    "govuk",
+    "journey",
+    "generator"
+  ],
+  "author": "",
+  "license": "ISC"
+}
