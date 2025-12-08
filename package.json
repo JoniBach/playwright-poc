@@ -5,14 +5,21 @@
   "private": true,
   "workspaces": [
     "playwright-poc-ui",
-    "playwright-poc-gen-ui"
+    "playwright-poc-gen-ui",
+    "playwright-poc-qa"
   ],
   "scripts": {
     "dev": "npm run dev --workspace=playwright-poc-ui",
     "ui": "npm run dev --workspace=playwright-poc-ui",
     "build": "npm run build --workspace=playwright-poc-ui",
     "preview": "npm run preview --workspace=playwright-poc-ui",
-    "generate": "npm run generate:index --workspace=playwright-poc-gen-ui",
+    "test": "npm run test --workspace=playwright-poc-qa",
+    "test:ui": "npm run test:ui --workspace=playwright-poc-qa",
+    "test:all": "npm run test:all --workspace=playwright-poc-qa",
+    "test:components": "npm run test:components --workspace=playwright-poc-qa",
+    "gen:journeys": "npm run generate:index --workspace=playwright-poc-gen-ui",
+    "gen:stories": "npm run generate:stories:interactive --workspace=playwright-poc-gen-ui",
+    "gen:tests": "npm run generate:tests --workspace=playwright-poc-gen-ui",
     "validate": "npm run validate --workspace=playwright-poc-gen-ui",
     "install:all": "npm install && npm install --workspace=playwright-poc-ui && npm install --workspace=playwright-poc-gen-ui"
   },
