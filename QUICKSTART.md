@@ -10,17 +10,17 @@ npm run gen:journeys
 npm run gen:stories
 
 # 4. Generate Playwright tests
-npm run gen:tests -- --journey=register-for-dbs
+npm run gen:tests -- --journey=dbs-check
 
 # 5. Validate/run tests
 npm run gen:validate
 
 # Alternative: Run specific test
-cd playwright-poc-qa && npm run test -- tests/generated/register-for-dbs.spec.ts
+cd playwright-poc-qa && npm run test -- tests/generated/dbs-check.spec.ts
 
 # or
 
-cd playwright-poc-qa && npx playwright test --ui tests/generated/register-for-dbs.spec.ts
+cd playwright-poc-qa && npx playwright test --ui tests/generated/dbs-check.spec.ts
 
 # Quick test fix: Manually edit JOURNEY_PATH in generated test if URL is wrong
 # const JOURNEY_PATH = '/correct/path/from/journey-config';
