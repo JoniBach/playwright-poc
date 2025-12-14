@@ -17,9 +17,16 @@
     "test:ui": "npm run test:ui --workspace=playwright-poc-qa",
     "test:all": "npm run test:all --workspace=playwright-poc-qa",
     "test:components": "npm run test:components --workspace=playwright-poc-qa",
+
+    "ai:index": "cd playwright-poc-gen-ui && tsx src/v2/gen-index.ts",
+    "ai:journeys": "cd playwright-poc-gen-ui && tsx src/v2/gen-journeys.ts",
+    "ai:stories": "cd playwright-poc-gen-ui && tsx src/v2/gen-stories.ts",
+    "ai:tests": "cd playwright-poc-gen-ui && tsx src/v2/gen-tests.ts",
+
     "gen:journeys": "cd playwright-poc-gen-ui && npm run generate:index",
     "gen:stories": "cd playwright-poc-gen-ui && npm run generate:stories:interactive",
     "gen:tests": "cd playwright-poc-gen-ui && npm run generate:tests -- \"$@\" --skip-stories --output=../playwright-poc-qa/tests/generated/",
+    "gen:v2": "cd playwright-poc-gen-ui && npm run gen:v2",
     "gen:validate": "cd playwright-poc-qa && npm run test:journeys && npm run test -- tests/generated/",
     "validate": "npm run validate --workspace=playwright-poc-gen-ui",
     "install:all": "npm install && npm install --workspace=playwright-poc-ui && npm install --workspace=playwright-poc-gen-ui"
