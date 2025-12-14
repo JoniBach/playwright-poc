@@ -22,6 +22,7 @@
     "ai:journeys": "cd playwright-poc-gen-ui && tsx src/v2/gen-journeys.ts",
     "ai:stories": "cd playwright-poc-gen-ui && tsx src/v2/gen-stories.ts",
     "ai:tests": "cd playwright-poc-gen-ui && tsx src/v2/gen-tests.ts",
+    "ai:check": "cd playwright-poc-qa && npx playwright test --ui tests/generated/apply-basic-dbs-check.spec.ts",
 
     "gen:journeys": "cd playwright-poc-gen-ui && npm run generate:index",
     "gen:stories": "cd playwright-poc-gen-ui && npm run generate:stories:interactive",
