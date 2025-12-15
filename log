@@ -1,0 +1,265 @@
+james.crook@Mac playwright-poc % clear
+james.crook@Mac playwright-poc % npm run ai:index   
+
+
+> playwright-poc@1.0.0 ai:index
+> cd playwright-poc-gen-ui && tsx src/v2/gen-index.ts
+
+🎯 Journey Index Entry Generator
+
+This tool generates metadata for new journeys to add to index.json
+
+[21:34:37] INFO    Running OpenAI preflight checks...
+[21:34:37] INFO    Running OpenAI preflight checks...
+[21:34:37] INFO    Checking environment variables...
+[21:34:37] INFO    OPENAI_API_KEY is set
+[21:34:37] INFO    OPENAI_MODEL is set: gpt-5.1
+[21:34:37] INFO    OPENAI_ORG_ID is set: org-ItpJzKN5wqWedLbRiBeGTApf
+[21:34:37] INFO    Validating API key format...
+[21:34:37] INFO    API key format looks valid
+[21:34:37] INFO    Checking model compatibility...
+[21:34:37] WARN    Model may not support structured outputs
+[21:34:37] INFO    Testing API connection...
+[21:34:38] SUCCESS Successfully connected to OpenAI API
+[21:34:38] INFO    Checking dependencies...
+[21:34:38] INFO    zod is installed
+[21:34:38] INFO    ══════════════════════════════════════════════════
+[21:34:38] SUCCESS All preflight checks passed!
+[21:34:38] WARN    Warnings:
+[21:34:38] WARN      - Model gpt-5.1 may not support structured outputs. Recommended: gpt-4o-2024-08-06 or later
+[21:34:38] INFO    ══════════════════════════════════════════════════
+[21:34:38] SUCCESS All preflight checks passed!
+[21:34:38] INFO    Loaded 12 existing departments from index
+? How would you like to create the journey metadata? AI-assisted
+? Describe the journey you want to create: dbs check
+[21:34:50] INFO    🤖 Generating journey metadata from your description...
+[21:34:50] INFO    Generating structured output...
+[21:34:50] INFO    Prompt: "Generate complete journey metadata for this UK government service: "dbs check"
+
+Please create:
+- A unique ID (kebab-case, e.g., "apply-driving-licence")
+- A clear, professional name
+- A detailed description of what the service does
+- The appropriate government department (choose from existing: HM Passport Office, HM Revenue and Customs (HMRC), Department for Work and Pensions (DWP), National Health Service (NHS), Ministry of Defence (MOD), Department for Education (DfE), Home Office, Ministry of Justice (MOJ), Driver and Vehicle Licensing Agency (DVLA), HM Courts & Tribunals Service (HMCTS), Civil Aviation Authority, Department for Business and Trade)
+- The service type (data-entry for applications/forms, data-lookup for checking info)
+- A URL-friendly slug
+
+Choose from these existing departments: HM Passport Office, HM Revenue and Customs (HMRC), Department for Work and Pensions (DWP), National Health Service (NHS), Ministry of Defence (MOD), Department for Education (DfE), Home Office, Ministry of Justice (MOJ), Driver and Vehicle Licensing Agency (DVLA), HM Courts & Tribunals Service (HMCTS), Civil Aviation Authority, Department for Business and Trade
+
+Make this realistic and something that would actually exist as a government service."
+Zod field at `#/definitions/structured_output/properties/enabled` uses `.optional()` without `.nullable()` which is not supported by the API. See: https://platform.openai.com/docs/guides/structured-outputs?api-mode=responses#all-fields-must-be-required
+This will become an error in a future version of the SDK.
+[21:34:54] SUCCESS Successfully generated structured output!
+
+╭────────────────────── 📋 Journey Metadata ──────────────────────╮
+│                                                                 │
+│   ID:          apply-basic-dbs-check                            │
+│   Name:        Apply for a Basic DBS Check                      │
+│   Description: Online service for individuals and employers     │
+│   to apply for a Basic Disclosure and Barring Service (DBS)     │
+│   check through the Home Office. This service collects          │
+│   personal details, identity information and consent to         │
+│   request a criminal record certificate showing unspent         │
+│   convictions. Users can track the progress of their            │
+│   application, upload supporting documents where required,      │
+│   pay the application fee, and receive guidance on how to       │
+│   view and share the result once issued. The service is         │
+│   intended for roles that require a basic level of criminal     │
+│   record disclosure, such as certain employment checks,         │
+│   tenancy applications or licensing requirements.               │
+│   Slug:        apply-basic-dbs-check                            │
+│   Department:  Home Office                                      │
+│   Dept Slug:   home-office                                      │
+│   Type:        data-entry                                       │
+│   Enabled:     true                                             │
+│   Created:     2025-12-14T21:34:54.550Z                         │
+│                                                                 │
+╰─────────────────────────────────────────────────────────────────╯
+
+? Save this entry to the journey index? yes
+[21:34:56] INFO    Updating journey index file...
+[21:34:56] SUCCESS Successfully added entry to journey index file!
+📁 Index file: ../playwright-poc-ui/static/journeys/index.json
+
+🎉 Journey index entry generation completed successfully!
+james.crook@Mac playwright-poc % npm run ai:journeys
+
+
+> playwright-poc@1.0.0 ai:journeys
+> cd playwright-poc-gen-ui && tsx src/v2/gen-journeys.ts
+
+[21:34:59] INFO    Journey Generation from Index Entry
+[21:34:59] INFO    This tool generates complete journey JSON from a selected index entry
+[21:34:59] INFO    Running OpenAI preflight checks...
+[21:34:59] INFO    Checking environment variables...
+[21:34:59] INFO    OPENAI_API_KEY is set
+[21:34:59] INFO    OPENAI_MODEL is set: gpt-5.1
+[21:34:59] INFO    OPENAI_ORG_ID is set: org-ItpJzKN5wqWedLbRiBeGTApf
+[21:34:59] INFO    Validating API key format...
+[21:34:59] INFO    API key format looks valid
+[21:34:59] INFO    Checking model compatibility...
+[21:34:59] WARN    Model may not support structured outputs
+[21:34:59] INFO    Testing API connection...
+[21:35:00] SUCCESS Successfully connected to OpenAI API
+[21:35:00] INFO    Checking dependencies...
+[21:35:00] INFO    zod is installed
+[21:35:00] INFO    ══════════════════════════════════════════════════
+[21:35:00] SUCCESS All preflight checks passed!
+[21:35:00] WARN    Warnings:
+[21:35:00] WARN      - Model gpt-5.1 may not support structured outputs. Recommended: gpt-4o-2024-08-06 or later
+[21:35:00] INFO    ══════════════════════════════════════════════════
+[21:35:00] SUCCESS All preflight checks passed!
+[21:35:00] INFO    Found 25 index entries
+? Select an index entry to generate the journey for:
+apply-basic-dbs-check
+[21:35:03] INFO    Selected: Apply for a Basic DBS Check
+[21:35:03] INFO    Online service for individuals and employers to apply for a Basic Disclosure and Barring Service (DBS) check through the Home Office. This service collects personal details, identity information and consent to request a criminal record certificate showing unspent convictions. Users can track the progress of their application, upload supporting documents where required, pay the application fee, and receive guidance on how to view and share the result once issued. The service is intended for roles that require a basic level of criminal record disclosure, such as certain employment checks, tenancy applications or licensing requirements.
+[21:35:03] INFO    Department: Home Office
+[21:35:03] INFO    Type: data-entry
+
+🚀 Generating full journey JSON...
+
+📝 Journey: Apply for a Basic DBS Check
+📝 Description: Online service for individuals and employers to apply for a Basic Disclosure and Barring Service (DBS) check through the Home Office. This service collects personal details, identity information and consent to request a criminal record certificate showing unspent convictions. Users can track the progress of their application, upload supporting documents where required, pay the application fee, and receive guidance on how to view and share the result once issued. The service is intended for roles that require a basic level of criminal record disclosure, such as certain employment checks, tenancy applications or licensing requirements.
+📝 Additional context: Create a Apply for a Basic DBS Check journey. Online service for individuals and employers to apply for a Basic Disclosure and Barring Service (DBS) check through the Home Office. This service collects personal details, identity information and consent to request a criminal record certificate showing unspent convictions. Users can track the progress of their application, upload supporting documents where required, pay the application fee, and receive guidance on how to view and share the result once issued. The service is intended for roles that require a basic level of criminal record disclosure, such as certain employment checks, tenancy applications or licensing requirements.
+
+[21:35:46] INFO    AI successfully generated journey structure
+[21:35:46] INFO    Post-processing journey...
+[21:35:46] WARN    Fixing startButtonHref: "start" → "/home-office/apply-basic-dbs-check/apply"
+[21:35:46] WARN    Removed 1 button(s) from page: start
+[21:35:46] WARN    Removed 1 button(s) from page: who-is-applying
+[21:35:46] WARN    Removed 1 button(s) from page: applicant-role
+[21:35:46] WARN    Removed 1 button(s) from page: applicant-name
+[21:35:46] WARN    Removed 1 button(s) from page: previous-names
+[21:35:46] WARN    Removed 1 button(s) from page: dob
+[21:35:46] WARN    Removed 1 button(s) from page: contact-details
+[21:35:46] WARN    Removed 1 button(s) from page: current-address
+[21:35:46] WARN    Removed 1 button(s) from page: address-history
+[21:35:46] WARN    Removed 1 button(s) from page: identity-documents
+[21:35:46] WARN    Removed 1 button(s) from page: upload-documents
+[21:35:46] WARN    Removed 1 button(s) from page: consent
+[21:35:46] WARN    Removed 1 button(s) from page: declaration
+[21:35:46] WARN    Removed 1 button(s) from page: payment
+[21:35:46] WARN    Removed 1 button(s) from page: check-answers
+[21:35:46] INFO    Removed 15 button component(s) total
+[21:35:46] INFO    Validating generated journey...
+[21:35:46] WARN    Validation errors found. Attempting auto-fix...
+[21:35:46] INFO    Auto-fix applied the following changes:
+[21:35:46] INFO       - Removed duplicate heading "Start your Basic DBS check application" from page start (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Are you applying for yourself or someone else?" from page who-is-applying (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "What is the basic DBS check for?" from page applicant-role (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Enter the applicant’s date of birth" from page dob (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Enter contact details for updates about the application" from page contact-details (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Enter the applicant’s current address" from page current-address (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Confirm the applicant’s identity documents" from page identity-documents (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Upload identity documents (if requested)" from page upload-documents (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Get the applicant’s consent" from page consent (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Read and accept the declaration" from page declaration (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Pay the application fee" from page payment (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Check your answers before you submit" from page check-answers (page title already renders this as <h1>)
+[21:35:46] INFO       - Removed duplicate heading "Application submitted" from page confirmation (page title already renders this as <h1>)
+✅ Journey validation passed!
+
+
+   ╭──────────── 🎯 Generated Journey ────────────╮
+   │                                              │
+   │   ID:          apply-basic-dbs-check         │
+   │   Name:        Apply for a Basic DBS Check   │
+   │   Pages:       undefined                     │
+   │   Start Page:  start                         │
+   │   CYA Page:    check-answers                 │
+   │   Completion:  confirmation                  │
+   │                                              │
+   ╰──────────────────────────────────────────────╯
+
+? Save this generated journey? yes
+[21:35:55] SUCCESS Journey saved successfully!
+[21:35:55] INFO    File: ../playwright-poc-ui/static/journeys/apply-basic-dbs-check.json
+[21:35:55] INFO    Post-processing index entry to ensure slug matches journey ID...
+[21:35:55] INFO    Index entry slug already matches journey ID, no update needed
+[21:35:55] SUCCESS Journey generation completed successfully!
+james.crook@Mac playwright-poc % npm run ai:stories
+
+
+> playwright-poc@1.0.0 ai:stories
+> cd playwright-poc-gen-ui && tsx src/v2/gen-stories.ts
+
+📖 Story Generation - Tier 1 & 2
+═══════════════════════════════════════════════════════════════
+
+📚 Found 24 journeys
+
+? What would you like to do? 📄 Generate stories for a single
+journey
+? Select a journey: apply-basic-dbs-check
+? Select output format: 📊 JSON - Structured data format
+? Where should the files be saved? 📁 Default
+(playwright-poc-qa/stories/[format])
+? Use AI-enhanced generation? no
+
+╔═══════════════════════════════════════════════════════════════╗
+║                    Generation Summary                         ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📋 Action: Selected journey
+📄 Journey: apply-basic-dbs-check
+📝 Format: json
+📁 Output: playwright-poc-qa/stories/json/
+🤖 AI: Disabled
+? 
+Proceed with generation? yes
+
+🚀 Starting story generation...
+
+   ✅ Saved to: /Users/james.crook/workspaces/play/playwright-poc/playwright-poc-qa/stories/json/apply-basic-dbs-check.json
+
+✨ Story generation complete!
+
+james.crook@Mac playwright-poc % npm run ai:tests
+
+
+> playwright-poc@1.0.0 ai:tests
+> cd playwright-poc-gen-ui && tsx src/v2/gen-tests.ts
+
+🧪 Test Generation - Tier 3
+═══════════════════════════════════════════════════════════════
+
+📚 Found 24 journeys
+
+? What would you like to do? 🧪 Generate tests for a single journey
+
+? Select a journey: apply-basic-dbs-check
+
+╔═══════════════════════════════════════════════════════════════╗
+║                    Test Generation Summary                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📋 Action: Selected journey
+📄 Journey: apply-basic-dbs-check
+📖 Stories: Generated fresh
+? 
+Proceed with test generation? yes
+
+🚀 Starting test generation...
+
+Running: npm run generate:tests -- --skip-stories --output=generated --journey=apply-basic-dbs-check
+
+
+> playwright-poc-gen-ui@1.0.0 generate:tests
+> tsx src/generate-stories.ts --format=playwright-full --skip-stories --output=generated --journey=apply-basic-dbs-check
+
+🚀 Story Generator - Tier 1 & 2
+═══════════════════════════════════════════════════════════════
+   ✅ Saved to: /Users/james.crook/workspaces/play/playwright-poc/playwright-poc-qa/tests/generated/apply-basic-dbs-check.spec.ts
+
+═══════════════════════════════════════════════════════════════
+✨ Story generation complete!
+
+📋 Log saved to: /Users/james.crook/workspaces/play/playwright-poc/playwright-poc-qa/logs/story-generation/story-generation-apply-basic-dbs-check-2025-12-14T21-36-24.log
+
+✨ Test generation complete!
+
+💡 Note: Generated tests may contain TODO markers for form field values
+   Fill in the TODOs and customize the tests for your specific needs
+
+james.crook@Mac playwright-poc % 
