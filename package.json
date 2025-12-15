@@ -32,7 +32,7 @@
     "gen:tests": "cd playwright-poc-gen-ui && npm run generate:tests -- \"$@\" --skip-stories --output=../playwright-poc-qa/tests/generated/",
     "gen:validate": "cd playwright-poc-qa && npm run test:journeys && npm run test -- tests/generated/",
     "validate": "npm run validate --workspace=playwright-poc-gen-ui",
-    "install:all": "npm install && npm install --workspace=playwright-poc-ui && npm install --workspace=playwright-poc-gen-ui"
+    "install:all": "npm install && npm install --workspace=playwright-poc-ui && npm install --workspace=playwright-poc-gen-ui && npm install --workspace=playwright-poc-qa"
   },
   "keywords": [
     "playwright",
